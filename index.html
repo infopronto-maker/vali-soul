@@ -20,11 +20,11 @@
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #0a0a0a;
       color: #f0f0f0;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 2rem 1rem;
     }
 
     /* --- Video de fondo --- */
@@ -36,32 +36,31 @@
       height: 100%;
       object-fit: cover;
       z-index: 0;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
-    /* --- Capa oscura --- */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.75);
       z-index: 1;
     }
 
-    /* --- Contenido principal --- */
     .contenido {
       position: relative;
       z-index: 2;
-      max-width: 780px;
+      max-width: 900px;
+      width: 100%;
       padding: 2rem;
       text-align: center;
-      animation: fadeIn 2s ease-out;
+      animation: fadeIn 1.5s ease-out;
     }
 
     .contenido .sello {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: #6a8cff;
@@ -73,7 +72,7 @@
     }
 
     .contenido h1 {
-      font-size: 3.4rem;
+      font-size: 3.2rem;
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 0.5rem;
@@ -84,92 +83,119 @@
       color: #ffffff;
     }
 
-    .contenido .subtitulo {
-      font-size: 1.1rem;
-      color: #a0a0a0;
-      margin-top: 0.5rem;
-      letter-spacing: 1px;
-    }
-
     .contenido .linea {
       width: 60px;
       height: 1px;
       background: #6a8cff;
-      margin: 2rem auto 1.5rem;
+      margin: 1.5rem auto;
     }
 
     /* --- Demo --- */
     .demo {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid #1e1e1e;
       border-radius: 16px;
-      padding: 2rem;
-      backdrop-filter: blur(6px);
-    }
-
-    .demo .campos {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      justify-content: center;
-    }
-
-    .demo input {
-      background: #141414;
-      border: 1px solid #2a2a2a;
-      color: #f0f0f0;
-      padding: 0.7rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      width: 200px;
-      transition: border 0.2s;
-    }
-
-    .demo input:focus {
-      border-color: #6a8cff;
-      outline: none;
-    }
-
-    .demo button {
-      background: #6a8cff;
-      color: #0a0a0a;
-      border: none;
-      padding: 0.7rem 2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .demo button:hover {
-      background: #8aa8ff;
-    }
-
-    /* --- Resultado --- */
-    #resultado {
-      margin-top: 1.5rem;
-      background: #0f0f0f;
-      border-radius: 12px;
-      padding: 1.2rem;
-      font-size: 0.9rem;
-      text-align: left;
-      color: #c0c0c0;
-      border: 1px solid #1e1e1e;
+      padding: 1.5rem;
       display: none;
-      white-space: pre-wrap;
-      word-break: break-word;
+      text-align: left;
+      animation: fadeIn 0.6s ease-out;
     }
 
     #resultado.visible {
       display: block;
-      animation: fadeIn 0.6s ease-out;
     }
 
-    /* --- Pie --- */
+    /* --- Tarjeta del reporte --- */
+    .reporte {
+      background: #0f0f0f;
+      border-radius: 16px;
+      padding: 1.5rem;
+      border: 1px solid #1e2a33;
+    }
+
+    .reporte .valid-id {
+      background: #1a2633;
+      border-radius: 12px;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-left: 4px solid #6a8cff;
+    }
+
+    .reporte .valid-id .id {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 1px;
+    }
+
+    .reporte .valid-id .label {
+      font-size: 0.75rem;
+      color: #6a8cff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .reporte .seccion {
+      margin-top: 1.2rem;
+    }
+
+    .reporte .seccion-titulo {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #6a8cff;
+      border-bottom: 1px solid #1e2a33;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .reporte .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1.5rem;
+    }
+
+    .reporte .campo {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.25rem 0;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #141a20;
+    }
+
+    .reporte .campo .etiqueta {
+      color: #8a9aa8;
+    }
+
+    .reporte .campo .valor {
+      color: #f0f0f0;
+      font-weight: 500;
+    }
+
+    .reporte .campo .valor.verde {
+      color: #4caf50;
+    }
+
+    .reporte .campo .valor.rojo {
+      color: #f44336;
+    }
+
+    .reporte .firma {
+      margin-top: 1.2rem;
+      background: #0a0a0a;
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: #6a7f94;
+      word-break: break-all;
+      border: 1px solid #1e2a33;
+    }
+
     .pie {
-      margin-top: 2.5rem;
+      margin-top: 2rem;
       font-size: 0.8rem;
       color: #4a4a4a;
       letter-spacing: 1px;
@@ -180,28 +206,21 @@
       100% { opacity: 1; transform: translateY(0); }
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
-      .contenido h1 {
-        font-size: 2.2rem;
-      }
-      .demo input {
-        width: 100%;
-      }
+      .contenido h1 { font-size: 2rem; }
+      .reporte .grid-2 { grid-template-columns: 1fr; }
+      .demo input { width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Video de fondo (.m3u8) -->
   <video id="video-fondo" muted autoplay loop playsinline>
     <source src="https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8" type="application/x-mpegURL" />
   </video>
 
-  <!-- Capa oscura -->
   <div class="overlay"></div>
 
-  <!-- Contenido -->
   <div class="contenido">
 
     <div class="sello">✦ VALID SOUL</div>
@@ -230,7 +249,6 @@
   </div>
 
   <script>
-    // Esperar a que el DOM esté listo
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('verificarBtn');
       const placaInput = document.getElementById('placa');
@@ -242,12 +260,12 @@
         const documentNumber = cedulaInput.value.trim();
 
         if (!plate || !documentNumber) {
-          resultadoDiv.textContent = '⚠️ Por favor, ingresa placa y CC.';
+          resultadoDiv.innerHTML = `<div class="reporte" style="color:#f44336;text-align:center;padding:1rem;">⚠️ Ingresa placa y CC.</div>`;
           resultadoDiv.classList.add('visible');
           return;
         }
 
-        resultadoDiv.textContent = '⏳ Consultando Valid Soul...';
+        resultadoDiv.innerHTML = `<div class="reporte" style="text-align:center;padding:1rem;color:#6a8cff;">⏳ Consultando Valid Soul...</div>`;
         resultadoDiv.classList.add('visible');
 
         try {
@@ -279,34 +297,113 @@
           const text = data?.result?.content?.[0]?.text;
 
           if (!text) {
-            resultadoDiv.textContent = '❌ No se obtuvo respuesta de Valid Soul.';
+            resultadoDiv.innerHTML = `<div class="reporte" style="color:#f44336;text-align:center;padding:1rem;">❌ No se obtuvo respuesta.</div>`;
             return;
           }
 
           const parsed = JSON.parse(text);
 
           if (parsed.error) {
-            resultadoDiv.textContent = `❌ ${parsed.error}`;
+            resultadoDiv.innerHTML = `<div class="reporte" style="color:#f44336;text-align:center;padding:1rem;">❌ ${parsed.error}</div>`;
             return;
           }
 
-          // Formatear respuesta bonita
-          const lines = [
-            `✅ SOUL VERIFICADO`,
-            `Soul ID: ${parsed.valid_id || 'N/A'}`,
-            `VIN: ${parsed.vin || 'N/A'}`,
-            `Marca: ${parsed.vehiculo?.marca || 'N/A'}`,
-            `Modelo: ${parsed.vehiculo?.modelo || 'N/A'}`,
-            `Año: ${parsed.vehiculo?.ano || 'N/A'}`,
-            `Color: ${parsed.vehiculo?.color || 'N/A'}`,
-            `SOAT: ${parsed.estado_legal?.soat_vigente ? '✅ Vigente' : '❌ No vigente'}`,
-            `Multas: ${parsed.estado_legal?.multas || 0}`,
-            `Firma: ${parsed.firma?.signature?.substring(0, 20) || 'N/A'}...`
-          ];
+          const v = parsed.vehiculo || {};
+          const p = parsed.propietario || {};
+          const s = parsed.soat || {};
+          const t = parsed.tecnomecanica || {};
+          const m = parsed.multas || {};
+          const r = parsed.restricciones || {};
+          const f = parsed.firma || {};
 
-          resultadoDiv.textContent = lines.join('\n');
+          const html = `
+            <div class="reporte">
+              <div class="valid-id">
+                <div class="label">🆔 SOUL ID</div>
+                <div class="id">${parsed.valid_id || 'N/A'}</div>
+                <div style="font-size:0.75rem;color:#6a7f94;margin-top:0.25rem;">${parsed.plate || 'N/A'} · ${parsed.consultado_en ? new Date(parsed.consultado_en).toLocaleDateString() : ''}</div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">🚗 VEHÍCULO</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Marca</span><span class="valor">${v.marca || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Modelo</span><span class="valor">${v.modelo || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Año</span><span class="valor">${v.ano || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Color</span><span class="valor">${v.color || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Clase</span><span class="valor">${v.clase || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Servicio</span><span class="valor">${v.servicio || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Combustible</span><span class="valor">${v.combustible || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Cilindraje</span><span class="valor">${v.cilindraje || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">VIN</span><span class="valor">${v.vin || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Estado</span><span class="valor">${v.estado || 'N/A'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">👤 PROPIETARIO</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Nombre</span><span class="valor">${p.nombre || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Tipo doc.</span><span class="valor">${p.tipo_documento || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Número</span><span class="valor">${p.numero_documento || 'N/A'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">📋 SOAT</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Vigente</span><span class="valor ${s.vigente ? 'verde' : 'rojo'}">${s.vigente ? '✅ Sí' : '❌ No'}</span></div>
+                  <div class="campo"><span class="etiqueta">Expedición</span><span class="valor">${s.fecha_expedicion || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Vencimiento</span><span class="valor">${s.fecha_vencimiento || 'N/A'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">🔧 TÉCNICO-MECÁNICA</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Vigente</span><span class="valor ${t.vigente ? 'verde' : 'rojo'}">${t.vigente ? '✅ Sí' : '❌ No'}</span></div>
+                  <div class="campo"><span class="etiqueta">Expedición</span><span class="valor">${t.fecha_expedicion || 'N/A'}</span></div>
+                  <div class="campo"><span class="etiqueta">Vencimiento</span><span class="valor">${t.fecha_vencimiento || 'N/A'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">💰 MULTAS</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Total</span><span class="valor">${m.total || 0}</span></div>
+                  <div class="campo"><span class="etiqueta">Pendientes</span><span class="valor">${m.pendientes || 0}</span></div>
+                  <div class="campo"><span class="etiqueta">Deuda total</span><span class="valor">${m.deuda_total ? '$' + m.deuda_total.toLocaleString() : '$0'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">🔒 RESTRICCIONES</div>
+                <div class="grid-2">
+                  <div class="campo"><span class="etiqueta">Robo</span><span class="valor ${r.robo ? 'rojo' : 'verde'}">${r.robo ? '⚠️ Sí' : '✅ No'}</span></div>
+                  <div class="campo"><span class="etiqueta">Judicial</span><span class="valor ${r.judicial ? 'rojo' : 'verde'}">${r.judicial ? '⚠️ Sí' : '✅ No'}</span></div>
+                </div>
+              </div>
+
+              <div class="seccion">
+                <div class="seccion-titulo">🔐 FIRMA</div>
+                <div class="firma">
+                  <div><strong>Hash:</strong> ${f.content_hash || 'N/A'}</div>
+                  <div style="margin-top:0.3rem;"><strong>Signature:</strong> ${f.signature || 'N/A'}</div>
+                </div>
+              </div>
+
+              <div style="margin-top:1rem;font-size:0.7rem;color:#4a4a4a;text-align:center;border-top:1px solid #1e2a33;padding-top:0.8rem;">
+                Fuente: ${parsed.fuente || 'verifik.co/runt'} · Verificado por Valid Soul
+              </div>
+            </div>
+          `;
+
+          resultadoDiv.innerHTML = html;
+          resultadoDiv.classList.add('visible');
+
         } catch (error) {
-          resultadoDiv.textContent = `❌ Error: ${error.message}`;
+          resultadoDiv.innerHTML = `<div class="reporte" style="color:#f44336;text-align:center;padding:1rem;">❌ Error: ${error.message}</div>`;
+          resultadoDiv.classList.add('visible');
         }
       });
     });
@@ -314,3 +411,4 @@
 
 </body>
 </html>
+
