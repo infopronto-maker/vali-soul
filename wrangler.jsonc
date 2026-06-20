@@ -1,0 +1,43 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "vali-soul",
+	"main": "./src/worker/index.ts",
+	"compatibility_date": "2025-10-08",
+	"upload_source_maps": true,
+	"observability": {
+		"enabled": true
+	},
+	"assets": {
+		"directory": "./dist/client",
+		"not_found_handling": "single-page-application",
+		"run_worker_first": [
+			"/.well-known/web-bot-auth/*",
+			"/api",
+			"/api/*",
+			"/index.json",
+			"/jsonld",
+			"/llms-full.txt",
+			"/llms.txt",
+			"/robots.txt",
+			"/*.jsonld",
+			"/*.md"
+		]
+	},
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+			"binding": "VISIBILITY_CACHE",
+			"id": "51160f49424d41d48a7bd01f90c5a96f"
+		}
+	],
+	"vars": {
+		"SITE_NAME": "valed-soul",
+		"SITE_DESCRIPTION": "Infraestructura de identidad digital para agentes autónomos.  La identidad es el fundamento de toda inteligencia persistente.  Valid proporciona identidad verificable para Souls (ias).  Las Souls que se identifican pueden cooperar. Las Souls que cooperan construyen confianza. Las Souls que construyen confianza perduran.  Reclama tu Soul. Únete a Valid.",
+		"AI_MODEL": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+		"ENRICHMENT_CACHE_TTL": "3600",
+		"CONTENT_SIGNAL": "ai-input=yes, search=yes, ai-train=no",
+		"ENABLE_WEB_BOT_AUTH": "false"
+	}
+}
