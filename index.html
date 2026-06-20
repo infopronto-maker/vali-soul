@@ -216,9 +216,8 @@
     <div class="demo">
       <div class="campos">
         <input type="text" id="placa" placeholder="Placa" />
-<input type="text" id="cedula" placeholder="CC" />
-
-  
+        <input type="text" id="cedula" placeholder="CC" />
+        <button id="verificarBtn">Obtener Valid ID</button>
       </div>
 
       <div id="resultado"></div>
@@ -243,7 +242,7 @@
         const documentNumber = cedulaInput.value.trim();
 
         if (!plate || !documentNumber) {
-          resultadoDiv.textContent = '⚠️ Por favor, ingresa placa y cédula.';
+          resultadoDiv.textContent = '⚠️ Por favor, ingresa placa y CC.';
           resultadoDiv.classList.add('visible');
           return;
         }
@@ -315,3 +314,4 @@
 
 </body>
 </html>
+
