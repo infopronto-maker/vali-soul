@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Valid</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #080c14;
+    color: #c8d8f0;
+    line-height: 1.7;
+    padding: 48px 24px 80px;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .logo {
+    font-family: 'Courier New', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: #00e5ff;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .meta {
+    font-size: 13px;
+    color: #8a9bb8;
+    margin-bottom: 48px;
+  }
+
+  h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #00e5ff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 40px 0 12px;
+  }
+
+  p { margin-bottom: 14px; font-size: 15px; }
+
+  ul {
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+
+  ul li {
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  a { color: #00e5ff; }
+
+  .divider {
+    height: 1px;
+    background: #1a2540;
+    margin: 48px 0;
+  }
+
+  .contact-block {
+    background: #0d1420;
+    border: 1px solid #1a2540;
+    border-radius: 12px;
+    padding: 24px;
+  }
+
+  .contact-block p { margin: 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <span class="logo">VALID</span>
+
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective date: June 26, 2026 · Last updated: June 26, 2026</p>
+
+  <p>Valid ("we," "our," or "us") operates the Valid MCP Server — a vehicular identity infrastructure that provides cryptographically signed vehicle identity records for AI agents and software systems. This Privacy Policy explains what data we collect, how we use it, and your rights regarding that data.</p>
+
+  <h2>1. Who We Are</h2>
+  <p>Valid is a vehicular identity infrastructure company based in Cali, Colombia. We provide the Valid MCP Server, which allows AI agents and software systems to query vehicle identity records for vehicles registered in Colombia.</p>
+
+  <h2>2. Data We Collect</h2>
+  <p>When you or your agent uses the Valid MCP Server, we may collect:</p>
+  <ul>
+    <li><strong>Vehicle license plates</strong> submitted as query inputs</li>
+    <li><strong>API keys</strong> used to authenticate requests</li>
+    <li><strong>Usage logs</strong> — timestamp, tool called, plate queried, response status</li>
+    <li><strong>IP addresses</strong> of API callers for security and abuse prevention</li>
+  </ul>
+  <p>We do not collect personal information about vehicle owners beyond what is returned by official Colombian government registries (RUNT, SIMIT) as part of the vehicle record.</p>
+
+  <h2>3. Data We Do Not Collect</h2>
+  <ul>
+    <li>We do not collect names, emails, or contact information unless you register for API access</li>
+    <li>We do not track end users of applications built on top of Valid</li>
+    <li>We do not sell data to third parties</li>
+    <li>We do not use vehicle queries for advertising purposes</li>
+  </ul>
+
+  <h2>4. How We Use Data</h2>
+  <p>We use collected data to:</p>
+  <ul>
+    <li>Process vehicle identity queries and return signed Valid ID records</li>
+    <li>Monitor API usage to enforce rate limits and detect abuse</li>
+    <li>Maintain audit logs of signed records for cryptographic integrity</li>
+    <li>Improve the reliability and accuracy of the Valid service</li>
+  </ul>
+
+  <h2>5. Data Sources</h2>
+  <p>Vehicle data returned by Valid originates from official Colombian government registries accessed through licensed data providers (currently Verifik.co). Valid does not scrape, reverse-engineer, or bypass any government system. All data access is governed by contractual agreements with licensed providers.</p>
+
+  <h2>6. Data Retention</h2>
+  <p>Signed Valid ID records are retained indefinitely as part of the immutable vehicle identity ledger — this is core to the product's value (cryptographic proof of what systems reported at a specific timestamp).</p>
+  <p>Usage logs are retained for 90 days for security and billing purposes, then deleted.</p>
+
+  <h2>7. Data Sharing</h2>
+  <p>We do not sell, rent, or share your data with third parties except:</p>
+  <ul>
+    <li><strong>Licensed data providers</strong> (Verifik.co) — to fulfill vehicle queries</li>
+    <li><strong>Infrastructure providers</strong> (Supabase, Cloudflare) — to operate the service</li>
+    <li><strong>Legal requirements</strong> — if required by Colombian law or a valid court order</li>
+  </ul>
+
+  <h2>8. Security</h2>
+  <p>Valid uses industry-standard security practices:</p>
+  <ul>
+    <li>All API connections use HTTPS/TLS encryption</li>
+    <li>Vehicle identity records are signed with Ed25519 cryptographic signatures</li>
+    <li>API keys are hashed before storage</li>
+    <li>Access to production systems is restricted and logged</li>
+  </ul>
+
+  <h2>9. Your Rights</h2>
+  <p>Under Colombian data protection law (Ley 1581 de 2012) and applicable regulations, you have the right to:</p>
+  <ul>
+    <li>Know what personal data we hold about you</li>
+    <li>Request correction of inaccurate data</li>
+    <li>Request deletion of data where legally permissible</li>
+    <li>Withdraw consent for data processing</li>
+  </ul>
+  <p>To exercise these rights, contact us at the address below.</p>
+
+  <h2>10. MCP Tool Annotations</h2>
+  <p>All tools exposed by the Valid MCP Server are read-only. They query and return vehicle identity data but do not modify, delete, or write any external system data. All tools are annotated with <code>readOnlyHint: true</code> in compliance with MCP protocol standards.</p>
+
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy as our service evolves. We will update the effective date at the top of this page. Continued use of the Valid MCP Server after changes constitutes acceptance of the updated policy.</p>
+
+  <div class="divider"></div>
+
+  <h2>Contact</h2>
+  <div class="contact-block">
+    <p>For privacy inquiries, data requests, or questions about this policy:</p>
+    <br>
+    <p><strong>Valid</strong><br>
+    Cali, Colombia<br>
+    Email: <a href="mailto:privacy@valid.co">privacy@valid.co</a><br>
+    GitHub: <a href="https://github.com/infopronto-maker/vali-soul">github.com/infopronto-maker/vali-soul</a></p>
+  </div>
+
+</div>
+</body>
+</html>
